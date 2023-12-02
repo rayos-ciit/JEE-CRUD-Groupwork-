@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f ="http://java.sun.com/jsf/core" 
+     xmlns:h ="http://java.sun.com/jsf/html"
+     >
+    <h:head>
+        <title>My Data Grid</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable binding="#{table}" value="#{myuser.getAll()}" 
+                         var="m">
+                <h:column>
+                    <f:facet name="header">Record Id</f:facet>
+                    <h:outputText value="#{m.id}"></h:outputText>
+                </h:column>    
+                
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    <h:outputText value="#{m.em}"></h:outputText>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                    <h:outputText value="#{m.fn}"></h:outputText>
+                </h:column> 
+                
+                
+                <h:column>
+                    <f:facet name="header">Middle Name</f:facet>
+                    <h:outputText value="#{m.mn}"></h:outputText>
+                </h:column> 
+                
+                
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                    <h:outputText value="#{m.ln}"></h:outputText>
+                </h:column> 
+                
+                <h:column>
+                    <f:facet name="header">User Contact Number</f:facet>
+                    <h:outputText value="#{m.ucn}"></h:outputText>
+                </h:column> 
+                
+                <h:column>
+                    <f:facet name="header">User Address</f:facet>
+                    <h:outputText value="#{m.ua}"></h:outputText>
+                </h:column> 
+                
+                <h:column>
+                     <f:facet name="header">Update</f:facet>
+                     <h:commandButton action="#{myuser.edit(m.id)}" value="Update">
+                     </h:commandButton>    
+                 </h:column>  
+                
+                <h:column>
+                     <f:facet name="header">Delete</f:facet>
+                     <h:commandButton action="#{myuser.delete(m.id)}" value="Delete">
+                     </h:commandButton>    
+                 </h:column>  
+            </h:dataTable>    
+
+            
+        </h:form>    
+    </h:body>
+</html>
